@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# This script creates a file containing its PID,
+# handles SIGTERM and SIGINT signals,
+# and displays a message indefinitely.
 
 # Create the file /var/run/myscript.pid containing its PID
 echo $$ > /var/run/myscript.pid
