@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Displays "To infinity and beyond" indefinitely with
+# This script stoped by the 67-stop_me_if_you_can
+# For displays "I am invincible!!!"
+
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "I am invincible!!!"' SIGTERM
+done
