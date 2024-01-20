@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# Edit the SSH client configuration file
-echo "Host *
-  IdentityFile ~/.ssh/school
-  PasswordAuthentication no
