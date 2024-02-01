@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# 0-world_wide_web
+
+info() {
+    domain=$1
+    subdomain=$2
+    record_info=$(dig "$subdomain"."$domain" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+    record_type=$(echo "$record_info" | awk '{print $1}')
+    destination=$(echo "$record_info" | awk '{print $2}')
+    echo "The subdomain $subdomain is a $record_type record and points to $destination"
+}
+
+domain=$1
+subdomain=$2
+
+if [[ -z $subdomain ]]; then
+        info "$domain" "www"
+        info "$domain" "lb-01"
+        info "$domain" "web-01"
+        info "$domain" "web-02"
+else
+    info "$domain" "$subdomain"
+fi
