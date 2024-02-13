@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #1-run_nginx_as_nginx
-cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 chmod 644 /etc/nginx/nginx.conf
 sed -i 's/user root;/user nginx;/g' /etc/nginx/nginx.conf
 sed -i "s/80/8080/g" /etc/nginx/sites-available/default
