@@ -1,6 +1,6 @@
 #0-strace_is_your_friend.pp
 
-file { '/path/to/httpd.conf':
-  ensure => present,
-  content => template('my_module/vhost_template.erb'),
+exec { 'fix-wordpress':
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path    => '/usr/local/bin/:/bin/'
 }
